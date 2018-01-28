@@ -24,4 +24,4 @@ Install dependencies first:
 
 #### Production mode
 
-`yarn run build`
+`yarn build`

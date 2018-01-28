@@ -23,19 +23,23 @@ const Card: React.SFC<ICard> = ({
     {...draggableProps}
     {...dragHandleProps}
   >
-    <p
-      className={cn("pa2 br1 ba hover-bg-white-70", {
-        "bg-white b--light-yellow": !isDragging,
-        "bg-white-80 b--yellow shadow-4": isDragging,
-      })
-      }
-      style={{
-        WebkitBackdropFilter: isDragging ? "blur(2px)" : "none",
-        userSelect: "none",
-      }}
-    >
-      {value}
-    </p>
+    <div style={{
+      userSelect: "none",
+    }}>
+      <p
+        className={cn("pa2 br1 ba hover-bg-white-70", {
+          "bg-white b--light-yellow": !isDragging,
+          "bg-white-80 b--yellow shadow-4": isDragging,
+        })
+        }
+        style={{
+          WebkitBackdropFilter: isDragging ? "blur(2px)" : "none",
+          userSelect: "none",
+        }}
+      >
+        {value}
+      </p>
+    </div>
   </div>;
 };
 

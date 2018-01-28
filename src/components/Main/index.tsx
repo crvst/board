@@ -11,7 +11,12 @@ const Main: React.SFC<IMain> = ({ children }) => {
     className="flex flex-column flex-auto flex-shrink-0"
     role="main"
   >
-    <div className="flex-auto bg-white pv2 ph1 ma2 mb0 br2 overflow-x-scroll">
+    <div
+      className="flex-auto bg-white pv2 ph1 ma2 mb0 br2 overflow-x-scroll"
+      style={{
+        WebkitOverflowScrolling: "touch",
+      }}
+    >
       {children}
     </div>
   </main>;
