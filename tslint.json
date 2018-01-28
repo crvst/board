@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-react"
+  ],
+  "rules": {
+    "jsx-no-lambda": false,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case",
+      "allow-leading-underscore"
+    ],
+    "jsx-wrap-multiline": false,
+    "jsx-no-multiline-js": false,
+    "align": false,
+    "ter-arrow-parens": false,
+    "no-var-requires": false,
+    "strict-boolean-expressions": false,
+    "jsx-no-bind": false
+  }
+}

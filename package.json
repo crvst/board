@@ -1,0 +1,101 @@
+{
+  "name": "board",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">= 8"
+  },
+  "scripts": {
+    "start": "node fuse",
+    "fuse": "node fuse",
+    "minify:html": "npx html-minifier --file-ext html --input-dir ./build --output-dir ./build --config-file ./config/html-minify.conf",
+    "build": "NODE_ENV=production node fuse build && yarn run minify:html",
+    "test": "yarn run test:jest && yarn run lint:ts",
+    "test:jest": "npx jest",
+    "lint:ts": "npx tslint --fix --project ./"
+  },
+  "dependencies": {
+    "actiontypes": "*",
+    "classnames": "^2.2.5",
+    "nanoid": "^1.0.1",
+    "react": "^16.2.0",
+    "react-beautiful-dnd": "^4.0.1",
+    "react-dom": "^16.2.0",
+    "react-feather": "^1.0.8",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
+    "tachyons": "^4.9.1"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.3",
+    "@types/jest": "^22.1.0",
+    "@types/nanoid": "^1.0.0",
+    "@types/node": "^9.4.0",
+    "@types/react": "^16.0.31",
+    "@types/react-beautiful-dnd": "^3.0.0",
+    "@types/react-dom": "^16.0.3",
+    "@types/react-redux": "4.4.40",
+    "@types/redux": "^3.6.0",
+    "@types/redux-actions": "^2.2.3",
+    "cssnano": "^3.10.0",
+    "fuse-box": "^3.0.2",
+    "fuse-box-typechecker": "^2.7.0",
+    "html-minifier": "^3.5.8",
+    "jest": "^22.0.4",
+    "postcss": "^6.0.14",
+    "postcss-css-variables": "^0.8.0",
+    "postcss-font-smoothing": "^0.1.0",
+    "postcss-import": "^11.0.0",
+    "postcss-modules": "^1.1.0",
+    "postcss-omit-import-tilde": "^1.0.1",
+    "postcss-partial-import": "^4.1.0",
+    "prop-types": "^15.6.0",
+    "stylus": "^0.54.5",
+    "ts-jest": "^22.0.1",
+    "tslint": "^5.8.0",
+    "tslint-react": "^3.3.3",
+    "typescript": "^2.6.2",
+    "uglify-es": "^3.3.3",
+    "uglify-js": "^3.3.3"
+  },
+  "jest": {
+    "mapCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.ts?(x)",
+      "<rootDir>/src/**/?(*.)(spec|test).ts?(x)"
+    ],
+    "testURL": "http://localhost:4444",
+    "transform": {
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^.+\\.tsx?$": "<rootDir>/config/jest/typescriptTransform.js",
+      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web"
+    },
+    "moduleFileExtensions": [
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "web.js",
+      "js",
+      "web.jsx",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "./tsconfig.test.json"
+      }
+    }
+  }
+}
